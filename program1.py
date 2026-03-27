@@ -1,16 +1,24 @@
-V = float(input("Enter voltage (V): "))
-R = float(input("Enter resistance (R): "))
+name = input("Enter employee name: ")
+emp_id = input("Enter employee ID: ")
+department = input("Enter department: ")
+basic_salary = float(input("Enter basic salary: "))
 
-if R == 0:
-    print("Resistance cannot be zero.")
-else:
-    I = V / R
+da = 0.92 * basic_salary
+hra = 0.58 * basic_salary
+ta = 0.30 * basic_salary
+lic = 500
 
-    print(f"Current (I) = {I:.2f} A")
+gross_salary = basic_salary + da + hra + ta
+net_salary = gross_salary - lic
 
-    if I < 0.5:
-        print("Low current")
-    elif 0.5 <= I <= 2:
-        print("Normal current")
-    else:
-        print("High current")
+print("Employee Details")
+print("Name:", name)
+print("Employee ID:", emp_id)
+print("Department:", department)
+print("Basic Salary:", basic_salary)
+print("DA:", da)
+print("HRA:", hra)
+print("TA:", ta)
+print("LIC Deduction:", lic)
+print("Gross Salary:", gross_salary)
+print("Net Salary:", net_salary)
