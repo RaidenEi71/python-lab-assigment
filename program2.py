@@ -1,19 +1,22 @@
-name = input("Enter Vendor Name: ")
-year = int(input("Enter Year of Association: "))
-contact = input("Enter Contact Number: ")
-email = input("Enter Email ID: ")
+hardness = float(input("Enter hardness: "))
+carbon = float(input("Enter carbon content: "))
+tensile = float(input("Enter tensile strength: "))
 
-print("Enter Monthly Purchase Amounts")
+cond1 = hardness > 50
+cond2 = carbon < 0.7
+cond3 = tensile > 5600
 
-total_purchase = 0
+if cond1 and cond2 and cond3:
+    grade = 10
+elif cond1 and cond2:
+    grade = 9
+elif cond2 and cond3:
+    grade = 8
+elif cond1 and cond3:
+    grade = 7
+elif cond1 or cond2 or cond3:
+    grade = 6
+else:
+    grade = 5
 
-for i in range(1, 13):
-    amount = float(input("Month " + str(i) + ": "))
-    total_purchase += amount
-
-print("Annual Purchase / Billing Report =====")
-print("Vendor Name:", name)
-print("Year of Association:", year)
-print("Contact Number:", contact)
-print("Email ID:", email)
-print("Total Annual Purchase:", total_purchase)
+print("Grade of steel is:", grade)
