@@ -1,19 +1,17 @@
-name = input("Enter Vendor Name: ")
-year = int(input("Enter Year of Association: "))
-contact = input("Enter Contact Number: ")
-email = input("Enter Email ID: ")
+items = list(map(int, input("Enter item numbers separated by space: ").split()))
 
-print("Enter Monthly Purchase Amounts")
+print("Total items:", len(items))
 
-total_purchase = 0
+if items:
+    print("Last item:", items[-1])
+else:
+    print("List is empty")
 
-for i in range(1, 13):
-    amount = float(input("Month " + str(i) + ": "))
-    total_purchase += amount
+print("Sorted list:", sorted(items))
 
-print("Annual Purchase / Billing Report =====")
-print("Vendor Name:", name)
-print("Year of Association:", year)
-print("Contact Number:", contact)
-print("Email ID:", email)
-print("Total Annual Purchase:", total_purchase)
+print("Yes" if 515 in items else "No")
+
+items.extend([121, 321])
+items.sort()
+
+print("Updated list:", items)
